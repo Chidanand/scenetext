@@ -1,0 +1,12 @@
+% Solving for z
+A = [0 .5 0;
+    .5 0 .5;
+     0 .5 0];
+ 
+s = [1 1 1];
+
+cvx_begin
+    variable Z(n,n) symmetric
+    variable z(n)
+    minimize trace(AZ)
+cvx_end
