@@ -51,6 +51,11 @@ t1S=tic;
         bbs = [bbs; bbs_q];
     end
 t1=toc(t1S);
+
+% f_name=fullfile(sprintf('data/BB_I%05i.mat',ff));
+% save(f_name,'bbs');
+% load(f_name);
+
 % prunning by aspect ratio (case sensitive)
 bbs=asp_prun(bbs,ap_mean,ap_var,ch);
 % upper and lower case are equivalent
@@ -59,16 +64,23 @@ bbs(:,6)=equivClass(bbs(:,6),ch);
 nmsPrms{8} = {1,1};
 bbs=bbNms(bbs,nmsPrms);
 
-f_name=fullfile(sprintf('data/bbs/BB_I%05i.mat',ff));
+% f_name=fullfile(sprintf('data/bbs/BB_I%05i.mat',ff));
 % save(f_name,'bbs');
-load(f_name);
-[val idx] = sort(bbs(:,5),'descend');
-bbs = bbs(idx(1:50),:);
+% load(f_name);
 
+[val idx] = sort(bbs(:,5),'descend');
+% bbs = bbs(idx(1:20),:);
+imshow(I);charDetDraw(bbs(idx(1:10),:),ch);
+
+bbs = bbs(idx(1:20),:);
 A = construct_collision(bbs);
 s = bbs(:,5);
-v = convex_magic(A,s);
+v = convex_magic(2*A,s);
 imshow(I);charDetDraw(bbs(v==1,:),ch);
+bbs = bbs(v==1,:);
+
+bbs(:,5) = bbs(:,5)*500;
+
 % run word detector (PLEX)
 t2S=tic; words=wordDet('plexApply',bbs,ch1,lex,plxPrms); t2=toc(t2S);
 if ~isempty(wordSvm)
