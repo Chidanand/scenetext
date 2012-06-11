@@ -1,6 +1,6 @@
 function bbs=asp_prun(bbs,ap_mean,ap_var,ch)
 % loop for each character
-shrink_rate = 0.7;
+shrink_rate = 1;
 for i=1:length(ch)-1
     bbs_i = bbs(bbs(:,6)==i,:);
     x_mean = ap_mean(i);
