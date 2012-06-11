@@ -8,13 +8,32 @@ for i=1:n
         bb1 = bbs(i,:);
         bb2 = bbs(j,:);
         inters = bbApply( 'intersect', bb1, bb2 );
-        A(i,j) = bbApply( 'area', inters );
+        maxarea = max(bbApply( 'area', bb1),bbApply( 'area', bb2))
+        A(i,j) = bbApply( 'area', inters )/maxarea;
 %         uin = bbApply( 'union', bb1, bb2 );
 %         A(i,j) = bbApply( 'area', inters ) / bbApply( 'area', uin );
     end
 end
 A = A + A';
 A = A / max(A(:));
+
+% Second feature (distance)
+D = zeros(n,n);
+for i=1:n
+    for j=i+1:n
+        bb1 = bbs(i,:);
+        bb2 = bbs(j,:);
+        cen1 = [bb1(1,1)+0.5*bb1(1,3) bb1(1,2)+0.5*bb1(1,4)];
+        cen2 = [bb2(1,1)+0.5*bb2(1,3) bb2(1,2)+0.5*bb2(1,4)];
+        
+        dist = norm(cen1-cen2,2);
+        D(i,j) = dist;
+    end
+end
+D = D + D';
+D = exp(-D/mean(D(:)));
+D = D / max(D(:));
+
 
 % Second feature (collision)
 B = zeros(n,n);
@@ -23,28 +42,15 @@ for i=1:n
         if (i==j)
             continue;
         end
-        bb1 = bbs(i,6);
-        bb2 = bbs(j,6);
-        B(i,j) = bigram_prob(bb1,bb2);
+        if bbs(i,1) < bbs(j,1)
+            bb1 = bbs(i,6);
+            bb2 = bbs(j,6);
+            B(i,j) = bigram_prob(bb1,bb2);
+        end
     end
 end
+B = B .* D;
 B = B / max(B(:));
-
-% % Second feature (distance)
-% B = zeros(n,n);
-% for i=1:n
-%     for j=i+1:n
-%         bb1 = bbs(i,:);
-%         bb2 = bbs(j,:);
-%         cen1 = [bb1(1,1)+0.5*bb1(1,3) bb1(1,2)+0.5*bb1(1,4)];
-%         cen2 = [bb2(1,1)+0.5*bb2(1,3) bb2(1,2)+0.5*bb2(1,4)];
-%         
-%         dist = norm(cen1-cen2,2);
-%         B(i,j) = dist;
-%     end
-% end
-% B = B + B';
-% B = B / max(B(:));
 
 % Thrid feature (color similarity)
 C = zeros(n,n);

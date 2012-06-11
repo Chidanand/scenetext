@@ -1,7 +1,8 @@
 % Solving for z
-function v = convex_magic(A,s)
+function configs = convex_magic(A,s)
 
 n = length(s);
+configs = zeros(n,3);
 
 cvx_begin
     variable Z(n,n);
@@ -11,7 +12,6 @@ cvx_begin
         diag(Z) - .5*z == 0;
         [Z z; z' 1] == semidefinite(n+1);
 cvx_end
-v = z;
 cost = zeros(1,n);
 for i=1:size(z)
     temp = z;
@@ -20,10 +20,14 @@ for i=1:size(z)
     temp(temp<thr) = 0;
     cost(i) = -s'*temp + temp'*A*temp;
 end
-[val idx] = min(cost);
-thr = z(idx);
-v(v>=thr) = 1;
-v(v<thr) = 0;
+[~,idx] = sort(cost);
+for i=1:3
+    thr = z(idx(i));
+    v = z;
+    v(v>=thr) = 1;
+    v(v<thr) = 0;
+    configs(:,i) = v;
+end
 
 
 % [V,D] = eig(Z);
