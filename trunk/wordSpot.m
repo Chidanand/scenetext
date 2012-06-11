@@ -72,10 +72,10 @@ bbs=bbNms(bbs,nmsPrms);
 % bbs = bbs(idx(1:20),:);
 % imshow(I);charDetDraw(bbs(idx(1:10),:),ch);
 
-A = construct_collision(bbs);
-s = bbs(:,5);
-v = convex_magic(A,s);
-imshow(I);charDetDraw(bbs(v==1,:),ch);
+% A = construct_collision(bbs);
+% s = bbs(:,5);
+% v = convex_magic(A,s);
+% imshow(I);charDetDraw(bbs(v==1,:),ch);
 % bbs = bbs(v==1,:);
 
 bbs(:,5) = bbs(:,5)*500;
