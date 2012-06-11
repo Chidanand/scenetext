@@ -1,5 +1,5 @@
 %load allGtStrs
-allGtStrs = {'DOOR'};
+allGtStrs = {'DOOR','THE','SAKANA','AGENCY','GRANT','JAS','KFC','CVS','TRIDENT','DIEGO','GIFTS','BOOKSTORE','CHINESE','STORE','SAN','VIA','ARMY','HOTEL','SPACE'};
 ch='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_';
 
 n = length(ch);
@@ -14,7 +14,7 @@ for i=1:length(allGtStrs)
     end
 end
 
-unigram = (prior_counts + .11)/(sum(prior_counts)+.1);
+unigram = (prior_counts + 1)/(sum(prior_counts)+1);
     
 for i=1:length(allGtStrs)
     current_str = allGtStrs{i};
@@ -27,6 +27,8 @@ end
 
 for next=1:n
     for current=1:n
-        bigram_prob(current,next) = (bigram_counts(current,next) + .1*unigram(next))/(prior_counts(current)+.1);
+        bigram_prob(current,next) = (bigram_counts(current,next) + unigram(next))/(prior_counts(current)+1);
     end
 end
+
+save('bigram_prob2','bigram_prob');
