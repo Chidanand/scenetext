@@ -115,18 +115,18 @@ cFtr=cHogFtr;
 %   clear all;
 %   [dPath,ch,ch1,chC,chClfNm]=globals;
 %   
-%   load('ICDAR_trte.mat','x_icdar','y_icdar');
-%   load('char_trte.mat','x_char74','y_char74');
-%   load('synth_trte.mat','x_synth','y_synth');
+  load('ICDAR_trte.mat','x_icdar','y_icdar');
+  load('char_trte.mat','x_char74','y_char74');
+  load('synth_trte.mat','x_synth','y_synth');
   
   % only use 10000 synthetic data
-%   idx_rand = randperm(length(y_char74));
-%   idx = idx_rand(1:10000);
+  idx_rand = randperm(length(y_char74));
+  
 %   
-%   x = [x_icdar; x_char74; x_synth(idx,:)];
-%   y = [y_icdar; y_char74; y_synth(idx)];
+  x = [x_icdar; x_char74; x_synth(idx_rand(1:10000),:)];
+  y = [y_icdar; y_char74; y_synth];
 %   
-%   save('SVM_train_corpus.mat','x','y');
+  save('SVM_train_corpus.mat','x','y');
   % train one-against-all SVM with RBF
   load SVM_train_corpus;
   
