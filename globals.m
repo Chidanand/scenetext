@@ -19,8 +19,9 @@ function [dPath,ch,ch1,chC,chClfNm,dfNP]=globals
 %  Please email kaw006@cs.ucsd.edu if you have questions.
 
 %dPath = '/home/kai/datafresh/';
-% dPath = 'C:\Users\Phuc\Documents\Research\alpha\data\';
-dPath = 'C:\Users\John\Documents\MATLAB';
+
+dPath = 'C:\Users\Phuc\Documents\Research\alpha\data\';
+%dPath = 'C:\Users\John\Documents\MATLAB';
 % add svm and dollor's toolbox
 addpath(genpath('libsvm-3.11'));
 addpath(genpath('toolbox'));

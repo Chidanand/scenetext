@@ -27,7 +27,7 @@ dbgFileNm=sprintf('table2_%i_%i_%i_%i_%i_%1.2f.txt',clock);
 fid=fopen(dbgFileNm,'w'); fprintf('LOG:%s\n',dbgFileNm);
 labNm='wordCharAnnPad'; datNm='wordsPad';
 for p=1:length(paramSets)
-    load('SVM_model_0610_2');
+    load('SVM_model_0611');
     
     fModel.sBin = 8;
     fModel.oBin = 8;
@@ -52,7 +52,7 @@ for p=1:length(paramSets)
     fclose(fid);
     
     % loop over images
-    for f=460:length(dir(fullfile(tstDir,labNm,'*.txt')))-1
+    for f=61:length(dir(fullfile(tstDir,labNm,'*.txt')))-1
       fid1=fopen(dbgFileNm,'a'); fprintf(fid1,'%i,',f); fclose(fid1);
       objs=bbGt('bbLoad',fullfile(tstDir,sprintf('%s/I%05i.jpg.txt',labNm,f)));
       gt=upper([objs.lbl]); if(~checkValidGt(gt)), continue; end

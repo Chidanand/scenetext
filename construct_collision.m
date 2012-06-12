@@ -8,8 +8,11 @@ for i=1:n
         bb1 = bbs(i,:);
         bb2 = bbs(j,:);
         inters = bbApply( 'intersect', bb1, bb2 );
-        maxarea = max(bbApply( 'area', bb1),bbApply( 'area', bb2));
-        A(i,j) = bbApply( 'area', inters )/maxarea;
+        minarea = min(bbApply( 'area', bb1),bbApply( 'area', bb2))
+        percent = bbApply( 'area', inters )/minarea;
+        if percent > .1
+            A(i,j) = bbApply( 'area', inters )/minarea;
+        end
 %         uin = bbApply( 'union', bb1, bb2 );
 %         A(i,j) = bbApply( 'area', inters ) / bbApply( 'area', uin );
     end
@@ -32,14 +35,12 @@ for i=1:n
 end
 D = D + D';
 D = exp(-D/mean(D(:)));
-D = D / max(D(:));
-
 
 % Second feature (collision)
 B = zeros(n,n);
 for i=1:n
     for j=1:n
-        if (i==j)
+        if i==j
             continue;
         end
         if bbs(i,1) < bbs(j,1)
@@ -57,7 +58,6 @@ C = zeros(n,n);
 nbins = 15;
 for i=1:n
     for j=i+1:n
-        close all;
         bb1 = bbs(i,:);
         bb2 = bbs(j,:);
         I1 = I(bb1(1,2):bb1(1,2)+bb1(1,4)-1,bb1(1,1):bb1(1,1)+bb1(1,3)-1,:);
@@ -81,5 +81,5 @@ C = C + C';
 C = C / max(C(:));
 
 % Out = A;
-Out = A - B + C;
+Out = A - 2*B + .5*C;
 %Out = Out / max(Out(:));
