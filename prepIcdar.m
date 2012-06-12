@@ -21,16 +21,16 @@ chSz=100; nBg=5000;
 RandStream.getDefaultStream.reset();
 
 trainrel = fullfile('icdar','raw', 'SceneTrialTrain');
-% testrel = fullfile('icdar','raw', 'SceneTrialTest');
+testrel = fullfile('icdar','raw', 'SceneTrialTest');
 
 repackage(dPath, trainrel, fullfile('icdar','train'));
-% repackage(dPath, testrel, fullfile('icdar','test'));
+repackage(dPath, testrel, fullfile('icdar','test'));
 
 % create cropped character data with and without padding
 % cropChars('train',chSz,nBg,0);
 cropChars('train',chSz,nBg,1);
 % cropChars('test',chSz,nBg,0);
-% cropChars('test',chSz,nBg,1);
+cropChars('test',chSz,nBg,1);
 
 % create cropped words data with and without padding
 % cropWords('train',0);
@@ -58,7 +58,7 @@ for k=1:n
       P=bbApply('crop',I1,bbs,'replicate');
       for z=1:length(P)
 %         bb=bbApply('squarify',[1 1 size(P{z},2) size(P{z},1)],3,1);
-        bb = bbApply( 'resize', [1 1 size(P{z},2) size(P{z},1)], 1, 0.7);
+        bb = bbApply( 'resize', [1 1 size(P{z},2) size(P{z},1)], 1, 1);
         P{z}=bbApply('crop',P{z},bb,'replicate',[sz sz]); P{z}=P{z}{1};
 %         figure(1);imshow(P{1});
       end
