@@ -140,21 +140,22 @@ cFtr=cHogFtr;
 %   testY = y(idx_rand(n_train+1:end)); testX = x(idx_rand(n_train+1:end),:);
   % Fist we do cross validation to find parameters c and r
   %%
-bestcv = 0;
-for log2c = 5:1:7,
-  for log2g = -7:1:-4,
-    cmd = ['-q -c ', num2str(2^log2c), ' -g ', num2str(2^log2g)];
-    cv = get_cv_ac(trainY, trainX, cmd, 3);
-    if (cv >= bestcv),
-      bestcv = cv; bestc = 2^log2c; bestg = 2^log2g;
-    end
-    fprintf('%g %g %g (best c=%g, g=%g, rate=%g)\n', log2c, log2g, cv, bestc, bestg, bestcv);
-  end
-end
-save('SVM_para.mat','bestc','bestg');
+% bestcv = 0;
+% for log2c = 5:1:7,
+%   for log2g = -7:1:-4,
+%     cmd = ['-q -c ', num2str(2^log2c), ' -g ', num2str(2^log2g)];
+%     cv = get_cv_ac(trainY, trainX, cmd, 3);
+%     if (cv >= bestcv),
+%       bestcv = cv; bestc = 2^log2c; bestg = 2^log2g;
+%     end
+%     fprintf('%g %g %g (best c=%g, g=%g, rate=%g)\n', log2c, log2g, cv, bestc, bestg, bestcv);
+%   end
+% end
+% save('SVM_para.mat','bestc','bestg');
 
 %%
 % Re train again
+bestc=32; bestg=0.015625;
 param = [' -c ' int2str(bestc) ' -g ' int2str(bestg) ' -b 1'];
 SVM_model = svmtrain(y, x, param);
 
