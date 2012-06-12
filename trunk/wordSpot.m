@@ -42,18 +42,18 @@ lex=wordDet('build',lexS);
 % % run character detector (Ferns)
 t1S=tic; 
     % varying sizes
-    bbs = [];
-    for q=1:length(vary_size)
-        r = 1/vary_size(q);
-        I2=imResample(I,[round(size(I,1)),round(size(I,2)*r)]);
-        bbs_q=charDet(I2,fModel,frnPrms);
-        bbs_q(:,[1 3])=bbs_q(:,[1 3])/r;
-        bbs = [bbs; bbs_q];
-    end
+%     bbs = [];
+%     for q=1:length(vary_size)
+%         r = 1/vary_size(q);
+%         I2=imResample(I,[round(size(I,1)),round(size(I,2)*r)]);
+%         bbs_q=charDet(I2,fModel,frnPrms);
+%         bbs_q(:,[1 3])=bbs_q(:,[1 3])/r;
+%         bbs = [bbs; bbs_q];
+%     end
 t1=toc(t1S);
 
 f_name=fullfile(sprintf('data/BB_I%05i.mat',ff));
-save(f_name,'bbs');
+% save(f_name,'bbs');
 load(f_name);
 
 % prunning by aspect ratio (case sensitive)
@@ -67,17 +67,21 @@ bbs=bbNms(bbs,nmsPrms);
 
 [~,idx] = sort(bbs(:,5),'descend');
 % bbs = bbs(idx(1:20),:);
-imshow(I);charDetDraw(bbs(idx(1:20),:),ch);
+imshow(I);charDetDraw(bbs(idx(1:15),:),ch);
 
 load bigram_prob2;
-bbs = bbs(idx(1:20),:);
+bbs = bbs(idx(1:15),:);
+
+%%
 A = construct_collision(I,bbs,bigram_prob);
 s = bbs(:,5);
-configs = convex_magic(A,s);
+configs = convex_magic(.7*A,s);
 for i=1:3
     figure(i);
     imshow(I);charDetDraw(bbs(configs(:,i)==1,:),ch);
 end
+%%
+
 bbs = bbs(v==1,:);
 
 bbs(:,5) = bbs(:,5)*500;
