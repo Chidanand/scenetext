@@ -1,4 +1,4 @@
-function [A,B,C] = construct_collision(I,bbs,bigram_prob)
+function [A,B,C] = construct_collision(I_image,bbs,bigram_prob)
 n = size(bbs,1);
 
 % First feature (collision)
@@ -23,8 +23,8 @@ for i=1:n
 %         dist = norm(cen1-cen2,2);
         D(i,j) = dist;
 
-        I1 = I(bb1(1,2):bb1(1,2)+bb1(1,4)-2,bb1(1,1):bb1(1,1)+bb1(1,3)-2,:);
-        I2 = I(bb2(1,2):bb2(1,2)+bb2(1,4)-2,bb2(1,1):bb2(1,1)+bb2(1,3)-2,:);
+        I1 = I_image(bb1(1,2):min(bb1(1,2)+bb1(1,4),size(I_image,1)),bb1(1,1):min(bb1(1,1)+bb1(1,3),size(I_image,2)),:);
+        I2 = I_image(bb2(1,2):min(bb2(1,2)+bb2(1,4),size(I_image,1)),bb2(1,1):min(bb2(1,1)+bb2(1,3),size(I_image,2)),:);
 %         figure(8);subplot(1,2,1);imshow(I1);subplot(1,2,2);imshow(I2);
         hist_1 = []; hist_2 = [];
         for k=1:3 % for each channel
