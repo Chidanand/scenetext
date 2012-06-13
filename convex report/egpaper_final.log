@@ -1,9 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.30)  13 JUN 2012 11:05
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.3.8)  13 JUN 2012 12:33
 entering extended mode
 **egpaper_final.tex
-
-("C:\Users\Phuc\Documents\Research\Scene Text Project\convex report\egpaper_fin
-al.tex"
+("C:\Users\John\Documents\convex project\convex report\egpaper_final.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,9 +13,9 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -32,36 +30,36 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Users\Phuc\Documents\Research\Scene Text Project\convex report\cvpr.sty"
-(C:\Users\Phuc\AppData\Roaming\MiKTeX\2.9\tex\latex\eso-pic\eso-pic.sty
+("C:\Users\John\Documents\convex project\convex report\cvpr.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
 Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
 Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(C:\Users\Phuc\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gread@gobject=\count87
 )
@@ -75,7 +73,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\xspace.sty"
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
 CVPR 8.5 x 11-Inch Proceedings Style `cvpr.sty'.
@@ -91,22 +89,22 @@ CVPR 8.5 x 11-Inch Proceedings Style `cvpr.sty'.
 \cv@tot=\count90
 \cv@tmpc@=\count91
 \cv@tmpc=\count92
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\times.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
@@ -117,24 +115,24 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \epsfxsize=\dimen108
 \epsfysize=\dimen109
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen110
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen111
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count93
@@ -175,38 +173,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2009/06/22 v3.00
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(C:\Users\Phuc\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.sty
-Package: subfigure 2002/07/30 v2.1.4 subfigure package
-\subfigtopskip=\skip48
-\subfigcapskip=\skip49
-\subfigcaptopadj=\dimen119
-\subfigbottomskip=\skip50
-\subfigcapmargin=\dimen120
-\subfiglabelskip=\skip51
-\c@subfigure=\count105
-\c@lofdepth=\count106
-\c@subtable=\count107
-\c@lotdepth=\count108
-
-****************************************
-* Local config file subfigure.cfg used *
-****************************************
-(C:\Users\Phuc\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.cfg)
-\subfig@top=\skip52
-\subfig@bottom=\skip53
-)
-("C:\Users\Phuc\Documents\Research\Scene Text Project\convex report\egpaper_fin
-al.aux"
+("C:\Users\John\Documents\convex project\convex report\egpaper_final.aux"
 
 LaTeX Warning: Label `fig:sample1' multiply defined.
 
@@ -224,167 +201,149 @@ LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \AtBeginShipoutBox=\box30
 
-(C:\Users\Phuc\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count109
-\scratchdimen=\dimen121
+\scratchcounter=\count105
+\scratchdimen=\dimen119
 \scratchbox=\box31
-\nofMPsegments=\count110
-\nofMParguments=\count111
+\nofMPsegments=\count106
+\nofMParguments=\count107
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count112
-\MPscratchDim=\dimen122
-\MPnumerator=\count113
-\makeMPintoPDFobject=\count114
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen120
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks21
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Try loading font information for U+msa on input line 37.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 37.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 37.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 
+<fig/p1.png, id=1, 337.26pt x 149.8097pt>
+File: fig/p1.png Graphic file (type png)
+ <use fig/p1.png>
+Package pdftex.def Info: fig/p1.png used on input line 54.
+(pdftex.def)             Requested size: 237.13594pt x 105.33694pt.
+
+<fig/p10.png, id=3, 328.22626pt x 78.2925pt>
+File: fig/p10.png Graphic file (type png)
+ <use fig/p10.png>
+Package pdftex.def Info: fig/p10.png used on input line 55.
+(pdftex.def)             Requested size: 237.13594pt x 56.56526pt.
+
 Underfull \hbox (badness 1062) in paragraph at lines 65--66
 \OT1/ptm/m/n/10 street level pho-tos us-ing un-su-per-vised fea-ture learn-ing
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{C:/Users/Phuc/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
-
-
-LaTeX Warning: Citation `122' on page 2 undefined on input line 78.
-
-<fig/train_data.png, id=11, 493.845pt x 264.99pt>
+ <C:/Users/John/Documents/convex project/convex report/fig/p1.png> <C:/Users/Jo
+hn/Documents/convex project/convex report/fig/p10.png>]
+<fig/train_data.png, id=16, 493.845pt x 264.99pt>
 File: fig/train_data.png Graphic file (type png)
  <use fig/train_data.png>
-Package pdftex.def Info: fig/train_data.png used on input line 94.
+Package pdftex.def Info: fig/train_data.png used on input line 92.
 (pdftex.def)             Requested size: 237.13594pt x 127.24226pt.
 
-Underfull \vbox (badness 1448) has occurred while \output is active []
+<fig/p13_after.png, id=17, 587.94656pt x 318.43968pt>
+File: fig/p13_after.png Graphic file (type png)
+ <use fig/p13_after.png>
+Package pdftex.def Info: fig/p13_after.png used on input line 101.
+(pdftex.def)             Requested size: 496.85625pt x 269.10555pt.
 
-
-Underfull \vbox (badness 1796) has occurred while \output is active []
-
- [2 <C:/Users/Phuc/Documents/Research/Scene Text Project/convex report/fig/trai
-n_data.png>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 174.
-
-<fig/bigram.jpg, id=23, 885.3075pt x 377.91188pt>
-File: fig/bigram.jpg Graphic file (type jpg)
- <use fig/bigram.jpg>
-Package pdftex.def Info: fig/bigram.jpg used on input line 175.
-(pdftex.def)             Requested size: 237.13594pt x 101.22449pt.
-
-<fig/collision.jpg, id=24, 886.81313pt x 378.66469pt>
-File: fig/collision.jpg Graphic file (type jpg)
- <use fig/collision.jpg>
-Package pdftex.def Info: fig/collision.jpg used on input line 176.
-(pdftex.def)             Requested size: 237.13594pt x 101.25279pt.
-
-<fig/color.jpg, id=25, 886.81313pt x 379.4175pt>
-File: fig/color.jpg Graphic file (type jpg)
- <use fig/color.jpg>
-Package pdftex.def Info: fig/color.jpg used on input line 177.
-(pdftex.def)             Requested size: 237.13594pt x 101.45409pt.
-
-Overfull \hbox (5.0pt too wide) in paragraph at lines 175--178
-[][]
+Overfull \hbox (10.0pt too wide) in paragraph at lines 99--103
+ $[]$ 
  []
 
+[2 <C:/Users/John/Documents/convex project/convex report/fig/train_data.png>]
+<fig/ptop.jpg, id=28, 334.3692pt x 462.0462pt>
+File: fig/ptop.jpg Graphic file (type jpg)
+ <use fig/ptop.jpg>
+Package pdftex.def Info: fig/ptop.jpg used on input line 171.
+(pdftex.def)             Requested size: 237.13594pt x 327.68848pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 175--178
-[]
+Overfull \hbox (10.0pt too wide) in paragraph at lines 169--173
+ $[]$ 
  []
 
+[3 <C:/Users/John/Documents/convex project/convex report/fig/p13_after.png>]
+[4 <C:/Users/John/Documents/convex project/convex report/fig/ptop.jpg>]
+<fig/p9.png, id=36, 307.90031pt x 95.6072pt>
+File: fig/p9.png Graphic file (type png)
+ <use fig/p9.png>
+Package pdftex.def Info: fig/p9.png used on input line 222.
+(pdftex.def)             Requested size: 237.13594pt x 73.63525pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 175--178
-[] 
+<fig/p11.png, id=37, 300.3722pt x 131.74219pt>
+File: fig/p11.png Graphic file (type png)
+ <use fig/p11.png>
+Package pdftex.def Info: fig/p11.png used on input line 223.
+(pdftex.def)             Requested size: 237.13594pt x 104.01085pt.
+
+<fig/p12.png, id=38, 255.95625pt x 102.3825pt>
+File: fig/p12.png Graphic file (type png)
+ <use fig/p12.png>
+Package pdftex.def Info: fig/p12.png used on input line 224.
+(pdftex.def)             Requested size: 237.13594pt x 94.85385pt.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 220--226
+ $[]$ 
  []
 
-[3 <C:/Users/Phuc/Documents/Research/Scene Text Project/convex report/fig/bigra
-m.jpg> <C:/Users/Phuc/Documents/Research/Scene Text Project/convex report/fig/c
-ollision.jpg> <C:/Users/Phuc/Documents/Research/Scene Text Project/convex repor
-t/fig/color.jpg>]
-Underfull \hbox (badness 1648) in paragraph at lines 215--216
-[]\OT1/ptm/m/n/10 We eval-u-ate our meth-ods on the chal-leng-ing SVT
- []
-
-
-Underfull \hbox (badness 1231) in paragraph at lines 215--216
-\OT1/ptm/m/n/10 dataset, which con-tains words in dif-fer-ent view-points,
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-("C:\Users\Phuc\Documents\Research\Scene Text Project\convex report\egpaper_fin
-al.bbl"
-Underfull \vbox (badness 3679) has occurred while \output is active []
-
- [4])
-[5
-
-]
-("C:\Users\Phuc\Documents\Research\Scene Text Project\convex report\egpaper_fin
-al.aux")
-
-LaTeX Warning: There were undefined references.
-
+("C:\Users\John\Documents\convex project\convex report\egpaper_final.bbl")
+[5 <C:/Users/John/Documents/convex project/convex report/fig/p9.png> <C:/Users/
+John/Documents/convex project/convex report/fig/p11.png> <C:/Users/John/Documen
+ts/convex project/convex report/fig/p12.png>]
+("C:\Users\John\Documents\convex project\convex report\egpaper_final.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3077 strings out of 494045
- 39207 string characters out of 3148389
- 108004 words of memory out of 3000000
- 6306 multiletter control sequences out of 15000+200000
- 29658 words of font info for 71 fonts, out of 3000000 for 9000
+ 2917 strings out of 494045
+ 37081 string characters out of 3145973
+ 107113 words of memory out of 3000000
+ 6153 multiletter control sequences out of 15000+200000
+ 24902 words of font info for 61 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 37i,12n,39p,1085b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/time
-s/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (5 pages, 953347 bytes).
+ 37i,12n,39p,811b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/t
+imes/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8
+a.pfb>
+Output written on egpaper_final.pdf (5 pages, 1447214 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 83 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

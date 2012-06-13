@@ -6,7 +6,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{subfigure}
+%\usepackage{subfigure}
 
 % Include other packages here, before hyperref.
 
@@ -39,7 +39,7 @@ Phuc Xuan Nguyen\\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-This paper demonstrates an algorithm to tackle the problem of reading text in uncontrolled ``natural'' photos. In contrast to the traditional OCR problem, for which the focus was on scanned pages, scene text presents a number of challenges more commonly associated with general object recognition, including different viewpoints, sizes/scale, locations, fronts, and styles (neon, graffiti). There are two main contributions of this work: The first is the novel character detector using more representative information in the training step and support vector machine based classifier. The second is a more general word recognition system by setting up the dual of a Quadratic Programming problem. We show a significant improvement in accuracy on Street View Text dataset by 10% without explicit guide from lexicon.
+This paper demonstrates an algorithm to tackle the problem of reading text in ``natural'' photos. In contrast to the traditional OCR problem, for which the focus was on scanned pages, scene text presents a number of challenges more commonly associated with general object recognition, including different viewpoints, sizes/scale, locations, fronts, and styles (neon, graffiti). There are two main contributions of this work: The first is the novel character detector using more representative information in the training step and support vector machine based classifier. The second is a more general word recognition system by setting up the relaxation of a non-convex Quadratic Programming problem. We show a novel approach to tackle this problem without the explicit guide from a lexicon.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
@@ -51,8 +51,8 @@ Scene text recognition could also help improve map services. House number and st
 
 \begin{figure}[t]
 \begin{center}
-%\includegraphics[width=1\linewidth]{fig/p1}
-%\includegraphics[width=1\linewidth]{fig/p10}
+\includegraphics[width=1\linewidth]{fig/p1}
+\includegraphics[width=1\linewidth]{fig/p10}
 \end{center}
    \caption{Examples of character detection and word recognition.}
 \label{fig:sample1}
@@ -71,13 +71,11 @@ While progress has been made on cropped word recognition recently, the main chal
 %-------------------------------------------------------------------------
 \section{Character Detection}
 
-Each step of character detection will be discussed in detail.
-
 \subsection{Character Detection with SVM}
 
-Like many object recognition approaches, the first step in our algorithm is to detect potential locations of characters in the input image. In order to detect characters in different fonts and view points, we perform multi-scale and multi-aspect ratio for each character via sliding window classification. However, there are 62 categories (26 lowercase, 26 uppercase, and 10 digits) in our problem, we need to choose a suitable classifier in order to handle this large amount of categories efficiently. Multi-class Support Vector Machine (SVM)~\cite{122} is an robust classifier to deal with multi-class problem. In our implementation, we use Histogram of Gradient (HOG) descriptor~\cite{115}.
+The first step in our algorithm is to detect potential locations of characters in the input image. In order to detect characters in different fonts and view points, we perform multi-scale and multi-aspect ratio for each character via sliding window classification. There are 62 categories (26 lowercase, 26 uppercase, and 10 digits) in our problem. We need to choose a suitable classifier in order to handle this large amount of categories efficiently. Multi-class Support Vector Machine (SVM) is an robust classifier to deal with multi-class problem. In our implementation, we use Histogram of Gradient (HOG) descriptor~\cite{115} as features and input to SVM.
 
-This sliding window detection method produces many possible locations with different scales and aspect ratios. We call them candidate bounding boxes. However, some of those candidate boxes are not useful for recognizing words in the next step. We eliminate those bounding boxes using the following method.
+This sliding window detection method produces many possible locations with different scales and aspect ratios. These are candidate bounding boxes. However, some of those candidate boxes are not useful for recognizing words in the next step. We eliminate those bounding boxes using the following method.
 
 \subsection{Candidate Re-scoring and NMS}
 
@@ -100,7 +98,7 @@ We then apply Non-Maximum Suppression (NMS) for each character to address the is
 \begin{figure*}[ht]
 \begin{center}$
 \begin{array}{cc}
-%\includegraphics[width=1\linewidth]{fig/p13_after}
+\includegraphics[width=1\linewidth]{fig/p13_after}
 \end{array}$
 \end{center}
 \caption{Illustration of character detection and word recognition.}
@@ -109,8 +107,6 @@ We then apply Non-Maximum Suppression (NMS) for each character to address the is
 
 %-------------------------------------------------------------------------
 \section{Word Recognition}
-
-The character detection step provides us with a large amount of potential candidate bounding boxes for each character. Our next step is to find words from those candidates and produce reliable word recognition output.
 
 \subsection{Problem setup}
 
@@ -135,12 +131,11 @@ The semidefinite programming equivalent of this problem is expressed as followed
 A+\mbox{diag}(\lambda) & -\frac{1}{4}(s+\lambda)\\
 -\frac{1}{4}(s+\lambda) & -t
 \end{array}\right]\succeq0
-\end{eqnarray*}
+\end{eqnarray*}\\
 The dual of the SDP is
-
 \begin{eqnarray*}
-d^{*} & = & \mbox{argmin} tr(AZ)-\frac{1}{2}s^{T}z\\
-s.t. &  & diag(Z)=\frac{1}{2}z\\
+ & \mbox{argmin} &  tr(AZ)-\frac{1}{2}s^{T}z\\
+ & s.t. & diag(Z)=\frac{1}{2}z\\
  &  & \left[\begin{array}{cc}
 Z & z\\
 z^{T} & 1
@@ -153,9 +148,8 @@ We construct the cost matrix from three factors: collisions, bigram probability,
 \begin{eqnarray*}
 A=-\alpha B+\beta C+\gamma S
 \end{eqnarray*}
-
 where B, C, and S matrices represent bigram probability, collision, and color similarity, while $\alpha$, $\beta$, and $\gamma$ are the weighting factors.
-Collision was factored in the cost matrix as the intuition provides that correct bounding boxes often have little overlaps with another. Figure ? provides an example where the collision distinction helps in recognition. Mathematically, the collision matrix is constructed as 
+Collision was factored in the cost matrix as the intuition provides that correct bounding boxes often have little overlaps with another. Figure~\ref{fig:matrix} provides an example where the collision distinction helps in recognition. Mathematically, the collision matrix is constructed as 
 
 \begin{eqnarray*}
 C_{ij}=\frac{area_{i}\cap area_{j}}{area_{i}+area_{j}}
@@ -168,15 +162,18 @@ B_{ij}=\begin{cases}
 0 & otherwise
 \end{cases}
 \]
-
 where $P(l_{i}|l_{j})$ is the probability that the letter $l_{j}$ is followed by $l_{i}$ and $d_{ij}$ is the Euclidean between the bounding boxes. The similarity matrix is constructed by computing the pairwise $\chi^2$ distance the color histogram of each bounding box. We use 15 bins for each color channel.
 
-\begin{figure}[]
-	\subfigure[{}]{ \includegraphics[width=1\linewidth]{fig/bigram}  \label{fig:bookstein1} }
-	\subfigure[{}]{ \includegraphics[width=1\linewidth]{fig/collision}  \label{fig:bookstein2} }
-	\subfigure[{}]{ \includegraphics[width=1\linewidth]{fig/color}  \label{fig:bookstein3} }
-\caption{Examples describing the effects of the factors in the cost matrix. Picture (a) shows an example where the bigram would break the tie between both plausible explanation for the words. The bigram would weight the chance of the letter 'D' followed by the letter 'O' high than the digit '9'. Example (b) shows the effects of minizing the overlaps would lead the algorithm to choose 'DO' over 'DK' or 'KO'. Example (c) shows the benifits of the similarity matrix. The bounding box containing the letter 'D' is closer in term of color histogram distance to the bounding box containing the letter 'O' than the letter 'P'. }\label{fig:bookstein}
+
+\begin{figure}
+\begin{center}$
+\begin{array}{cc}
+\includegraphics[width=1\linewidth]{fig/ptop} \\
+\end{array}$
+\end{center}
+\caption{Examples describing the effects of the factors in the cost matrix. Picture (a) shows an example where the bigram would break the tie between both plausible explanation for the words. The bigram would weight the chance of the letter 'D' followed by the letter 'O' high than the digit '9'. Example (b) shows the effects of minizing the overlaps would lead the algorithm to choose 'DO' over 'DK' or 'KO'. Example (c) shows the benifits of the similarity matrix. The bounding box containing the letter 'D' is closer in term of color histogram distance to the bounding box containing the letter 'O' than the letter 'P'. }\label{fig:matrix}
 \end{figure}
+
 
 %-------------------------------------------------------------------------
 \section{Experiment}
@@ -186,13 +183,13 @@ We use the Street View Text (SVT)~\cite{417} dataset in our experiments. The SVT
 
 \subsection{Character Detection}
 
-There are many descriptors can be used for character recognition, and we choose the HOG feature as our descriptor that it outperform the others in~\cite{117} because it preserves better geometric information. We densely compute HOG features with a cell size of $8 \times 8$ using $8$ bins after resizing each image to $48 \times 48$ windows. This character detector is trained on ICDAR 2003 dataset, char74K, and our synthetic data using a one-againt-one SVM classifier with an RBF kernel, where the synthetic data contains about 10,000 images for 62 classes using 40 fonts and for each image we add some amount of Gaussian noise, and apply a random affine deformation.
+There are many descriptors can be used for character recognition, and we choose the HOG feature as our descriptor that it outperform the others in~\cite{117} because it preserves better geometric information. We densely compute HOG features with a cell size of $8 \times 8$ using $8$ bins after resizing each image to $48 \times 48$ windows. This character detector is trained on ICDAR 2003 dataset, char-74K, and our synthetic data using a one-againt-one SVM classifier with an RBF kernel, where the synthetic data contains about 10,000 images for 62 classes using 40 fonts and for each image we add some amount of Gaussian noise, and apply a random affine deformation.
 
-We then perform sliding window based character detection for multi-scale and multi-aspect ratio for every location in the input image. The candidate bounding boxes obtained by SVM classifier are then pruned by normal distribution model with a probability less than $0.4$. NMS is performed on the remaining bounding boxes to avoid wrong elimination. These two pruning steps are simply but efficient to discard noisy candidate while still preserve most true positive candidates for the next word recognition step.
+We then perform sliding window based character detection for multi-scale and multi-aspect ratio for every location in the input image. The candidate bounding boxes obtained by SVM classifier are then re-scored by normal distribution model. NMS is performed on the remaining bounding boxes to avoid wrong elimination. These two steps are simply but efficient to discard noisy candidate while still preserve most true positive candidates for the next word recognition step.
 
 \subsection{Cropped Word Recognition}
 
-Using the character detection and recognition described in previous section, we evaluate our method on the cropped region of the SVT-WD data set. We empirically find that $\alpha=.4$, $\beta=.4$, and $\gamma=.2$ give the best performance. We achieve the accuracy of 52.2\% on the test set. While our result is worse than the original method, we did not rely much on the lexicon. Our algorithm only leverages from the bigram built from the provided lexicons. Even so, we train our bigram model on the whole lexicon of 427 words, not just 50 words as the original method describes. Due to the restriction on time, we are not able to fully search over our parameter and fully discover the weighting factors in the cost matrices. As another metric for our evaluation, we compute the Levenshtein's distance between the prediction and the ground truth. The average edit distance is 2.484. The average length of the words in the lexicon is 5.818.
+Using the character detection and recognition described in previous section, we evaluate our method on the cropped region of the SVT-WD data set. We empirically find that $\alpha=.4$, $\beta=.4$, and $\gamma=.2$ give the best performance. We achieve the accuracy of 52.2\% on the test set. As another metric for our evaluation, we compute the Levenshtein's distance between the prediction and the ground truth. The average edit distance is 2.48. The average length of the words in the lexicon is 5.82.
 
 \begin{table}
 \begin{center}
@@ -201,29 +198,30 @@ Using the character detection and recognition described in previous section, we 
 Approach & Accuracy \\
 \hline\hline
 Previous work~\cite{417}  & 0.56 (364 words) \\
-Multi-scale + Multi-ratio & 0.60 (390 words)\\
-Multi-scale + Multi-ratio + TT & 0.66 (427 words)\\
+Our approach & 0.52 (337 words)\\
 \hline
 \end{tabular}
 \end{center}
-\caption{Cropped Word Recognition Accuracy: A comparison of proposed method to PLEX in~\cite{417}. We improve the accuracy by $10\%$ in SVT-WORD dataset.}
+\caption{Cropped Word Recognition Accuracy: A comparison of proposed method to PLEX in~\cite{417}. Even thought the accuracy is lower than the previous work, our system dose not directly rely on lexicon but rather just a bigram built from it.}
 \label{table:compare}
 \end{table}
 
 \subsection{Results and Discussion}
 
-We evaluate our methods on the challenging SVT dataset, which contains words in different viewpoints, sizes/scale, locations, fronts, and styles with low resolution or low contract conditions. We observe that our proposed method outperform~\cite{117} in cropped word recognition by $10\%$.
+We study the effect of multi-ratio of width and height. Original work in~\cite{417} uses fixed aspect ratio for sliding window approach. We, however, observe that different characters tend to have different ratios between width and height. In order to leverage this feature, multi-ratio of width and height for sliding window is performed in our algorithm. Multi-ratio approach is better at capturing true character bounding boxes in natural image with high variability.
 
-We study the effect of multi-ratio of width and height. Original work in~\cite{417} uses fixed aspect ratio for sliding window approach. However, we observe that different characters tend to have different ratios between width and height. In order to leverage this feature, multi-ratio of width and height for sliding window is performed in our algorithm, and the word recognition accuracy is higher by $4\%$ as in Table~\ref{table:compare}. The reason could be that our multi-ratio approach can better capture true character bounding boxes in natural image with high variability.
+We also analyze the effect of truncated training data. SVM is trained on training data that contain some noise on both sides in~\cite{417} . In real street view cases, characters, however, are tightly connected and it is difficult to contain all possible noise in training step. Therefore, we train our character detector on truncated training data by discarding $0.3$ width information on both sides to capture the internal geometric information. The result shows that we only need the internal information to capture characters in natural street view image and we can avoid the labor of collecting all possible combinations for the noise in both sides in training step.
 
-We also analyze the effect of truncated training data. Random Fern classifier is train on square training data that contain some noise on both sides in~\cite{417} .However, in many real street view cases, characters are tightly connected and it is difficult to contain all possible noise in training step. Therefore, we train our character detector on truncated training data by discarding $0.3$ width information on both sides to capture the internal geometric information. The training error is higher than before by using truncated training data but surprisingly the word recognition accuracy is higher by $6\%$ more and achieve total $10\%$ higher (Table~\ref{table:compare}) in cropped word recognition accuracy than in~\cite{417}. The result shows that we only need the internal information to capture characters in natural street view image and we can avoid the labor of collecting all possible combinations for the noise in both sides in training step. In the reminder of the paper we will refer to the truncated training procedure as ``TT''
+While our result is worse than the original method, we did not rely much on the lexicon. Our algorithm only leverages from the bigram built from the provided lexicons. Even so, we train our bigram model on the whole lexicon of 427 words, not just 50 words as the original method describes. Due to the restriction on time, we are not able to fully search over our parameter and fully discover the weighting factors in the cost matrices.
+
+After error analysis, we find that noise bounding boxes are still the main cause of confusion in our algorithm. Intra-class confusion is another factor that contributes to the errors. The final main factor that the error is propagated from character detection step. 
 
 \begin{figure}
 \begin{center}$
 \begin{array}{cc}
-%\includegraphics[width=1\linewidth]{fig/p9} \\
-%\includegraphics[width=1\linewidth]{fig/p11} \\
-%\includegraphics[width=1\linewidth]{fig/p12} \\
+\includegraphics[width=1\linewidth]{fig/p9} \\
+\includegraphics[width=1\linewidth]{fig/p11} \\
+\includegraphics[width=1\linewidth]{fig/p12} \\
 \end{array}$
 \end{center}
 \caption{Experiment results on SVT-WORD dataset.}
@@ -233,8 +231,7 @@ We also analyze the effect of truncated training data. Random Fern classifier is
 %-------------------------------------------------------------------------
 \section{Conclusion}
 
-Our work establish a new approach to improve traditional sliding window based character detector and a novel way to select useful training data by truncating each character on both sides and further extract more representative geometric information for character classifier. We show that we can outperform original work in~\cite{417} for both cropped word recognition and ene-to-end scene text recognition on full images, and contribute to better text recognition in the natural images.
-
+In this paper, we investigate a new approach toward scene text recognition. We implement a sliding window character classifier using SVM with HOG features. Using the bounding boxes obtained from character classifier, we set up a convex optimization problem, which is a relaxation of boolean quadratic programming problem to select the best candidate bounding boxes.
 
 {\small
 \bibliographystyle{ieee}
