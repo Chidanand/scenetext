@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{subfigure}
 
 % Include other packages here, before hyperref.
 
@@ -50,8 +51,8 @@ Scene text recognition could also help improve map services. House number and st
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=1\linewidth]{fig/p1}
-\includegraphics[width=1\linewidth]{fig/p10}
+%\includegraphics[width=1\linewidth]{fig/p1}
+%\includegraphics[width=1\linewidth]{fig/p10}
 \end{center}
    \caption{Examples of character detection and word recognition.}
 \label{fig:sample1}
@@ -169,6 +170,13 @@ B_{ij}=\begin{cases}
 \]
 
 where $P(l_{i}|l_{j})$ is the probability that the letter $l_{j}$ is followed by $l_{i}$ and $d_{ij}$ is the Euclidean between the bounding boxes. The similarity matrix is constructed by computing the pairwise $\chi^2$ distance the color histogram of each bounding box. We use 15 bins for each color channel.
+
+\begin{figure}[]
+	\subfigure[{}]{ \includegraphics[width=1\linewidth]{fig/bigram}  \label{fig:bookstein1} }
+	\subfigure[{}]{ \includegraphics[width=1\linewidth]{fig/collision}  \label{fig:bookstein2} }
+	\subfigure[{}]{ \includegraphics[width=1\linewidth]{fig/color}  \label{fig:bookstein3} }
+\caption{Examples describing the effects of the factors in the cost matrix. Picture (a) shows an example where the bigram would break the tie between both plausible explanation for the words. The bigram would weight the chance of the letter 'D' followed by the letter 'O' high than the digit '9'. Example (b) shows the effects of minizing the overlaps would lead the algorithm to choose 'DO' over 'DK' or 'KO'. Example (c) shows the benifits of the similarity matrix. The bounding box containing the letter 'D' is closer in term of color histogram distance to the bounding box containing the letter 'O' than the letter 'P'. }\label{fig:bookstein}
+\end{figure}
 
 %-------------------------------------------------------------------------
 \section{Experiment}
