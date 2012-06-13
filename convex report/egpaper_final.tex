@@ -118,13 +118,12 @@ x^{*} & = & argmin-s^{T}x+x^{T}Ax\\
 s.t &  & x_{i}(x_{i}-1)=0\forall i=1...n
 \end{eqnarray*}
 
-Given the primal problem, the dual of this problem is derived as followed,
+where A is a cost matrix. The construction of the Given the primal problem, the dual of this problem is derived as followed,
 \begin{eqnarray*}
 d^{*} & = & max-\frac{1}{2}(s+\lambda)^{T}(A+\mbox{diag}(\lambda))^{\dagger}(s+\lambda)\\
 s.t. &  & A+\mbox{diag}(\lambda)\succeq0\\
  &  & s+\lambda\in\Re(A+\mbox{diag(\ensuremath{\lambda}))}
 \end{eqnarray*}
-
 
 The semidefinite programming equivalent of this problem is expressed as followed,
 
@@ -147,7 +146,8 @@ z^{T} & 1
 \end{array}\right]\succeq0
 \end{eqnarray*}
 
-We treat this SDP problem as a relaxation of the primal problem. After obtaining the solution for the SDP, we search across the values of the elemnents of z to minimize the original cost function.
+We treat this SDP problem as a relaxation of the primal problem. After obtaining the solution for the SDP, we search across the values of z as thesholds to minimize the original cost function.
+\subsection{Constructing}
 \subsection{Word Re-scoring and NMS}
 
 The final step is our algorithm is to perform word level re-scoring and NMS~\cite{417} in order to capture global information for each word output by pictorial structure.
