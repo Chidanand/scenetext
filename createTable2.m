@@ -33,11 +33,7 @@ for p=1:length(paramSets)
     fModel.oBin = 8;
     fModel.chH = 48;
     fModel.ferns = SVM_model;
-%     fModel.fern
-%     fModel=load('fModel_07Easy_clean_boost.mat'); % shrink by 0.7 can achieve best acc
-%     fModel=load('fModel_07Easy_boost.mat'); % shrink by 0.7 can achieve best acc
-%   load fModel_Easy_with_boost;
-%     fModel=load('fern_synth.mat');
+
     
   % loop over test sets
   for i=1:length(tstSets)
@@ -52,7 +48,7 @@ for p=1:length(paramSets)
     fclose(fid);
     
     % loop over images
-    for f=61:length(dir(fullfile(tstDir,labNm,'*.txt')))-1
+    for f=0:length(dir(fullfile(tstDir,labNm,'*.txt')))-1
       fid1=fopen(dbgFileNm,'a'); fprintf(fid1,'%i,',f); fclose(fid1);
       objs=bbGt('bbLoad',fullfile(tstDir,sprintf('%s/I%05i.jpg.txt',labNm,f)));
       gt=upper([objs.lbl]); if(~checkValidGt(gt)), continue; end
@@ -88,11 +84,11 @@ for p=1:length(paramSets)
       tot1=[tot1,t1]; tot2=[tot2,t2]; tot3=[tot3,t3];
       
       words1=words(1:min(length(words),topK));
-      if ~isempty(words)
-          hh = figure(1);imshow(I);wordDetDraw(words1(1));
-%           file_name = fullfile(sprintf('data/I%05i.jpg',f));
-%           print(hh, '-djpeg', file_name);
-      end
+%       if ~isempty(words)
+%           hh = figure(1);imshow(I);wordDetDraw(words1(1));
+% %           file_name = fullfile(sprintf('data/I%05i.jpg',f));
+% %           print(hh, '-djpeg', file_name);
+%       end
       % 1=miss, >1=match ind + 1
       [strMatch,words1]=getWordMatchInd(objs,words1,...
         size(I,2)*widthThr);

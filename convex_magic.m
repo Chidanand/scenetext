@@ -1,5 +1,5 @@
 % Solving for z
-function configs = convex_magic(A,s)
+function [v final_cost] = convex_magic(A,s)
 
 n = length(s);
 configs = zeros(n,2);
@@ -13,34 +13,35 @@ cvx_begin
         [Z z; z' 1] == semidefinite(n+1);
 cvx_end
 cost = zeros(1,n);
-[V,~] = eig(Z);
-v = V(:,end);
-for i=1:size(v)
-    temp = v;
-    thr = v(i);
-    temp(temp>=thr) = 1;
-    temp(temp<thr) = 0;
-    cost(i) = -s'*temp + temp'*A*temp;
-end
-[~,idx] = sort(cost);
-thr = v(idx(1));
-v(v>=thr) = 1;
-v(v<thr) = 0;
-configs(:,1) = v;
 
-v = V(:,end-1);
-for i=1:size(v)
-    temp = v;
-    thr = v(i);
-    temp(temp>=thr) = 1;
-    temp(temp<thr) = 0;
-    cost(i) = -s'*temp + temp'*A*temp;
-end
-[~,idx] = sort(cost);
-thr = v(idx(1));
-v(v>=thr) = 1;
-v(v<thr) = 0;
-configs(:,2) = v;
+% [V,~] = eig(Z);
+% v = V(:,end);
+% for i=1:size(v)
+%     temp = v;
+%     thr = v(i);
+%     temp(temp>=thr) = 1;
+%     temp(temp<thr) = 0;
+%     cost(i) = -s'*temp + temp'*A*temp;
+% end
+% [~,idx] = sort(cost);
+% thr = v(idx(1));
+% v(v>=thr) = 1;
+% v(v<thr) = 0;
+% configs(:,1) = v;
+% 
+% v = V(:,end-1);
+% for i=1:size(v)
+%     temp = v;
+%     thr = v(i);
+%     temp(temp>=thr) = 1;
+%     temp(temp<thr) = 0;
+%     cost(i) = -s'*temp + temp'*A*temp;
+% end
+% [~,idx] = sort(cost);
+% thr = v(idx(1));
+% v(v>=thr) = 1;
+% v(v<thr) = 0;
+% configs(:,2) = v;
 
 for i=1:size(z)
     temp = z;
@@ -49,12 +50,13 @@ for i=1:size(z)
     temp(temp<thr) = 0;
     cost(i) = -s'*temp + temp'*A*temp;
 end
-[~,idx] = sort(cost);
+[val,idx] = sort(cost);
 thr = z(idx(1));
 v = z;
 v(v>=thr) = 1;
 v(v<thr) = 0;
-configs(:,3) = v;
+final_cost = val(1);
+% configs(:,3) = v;
 
 
 % [V,D] = eig(Z);
