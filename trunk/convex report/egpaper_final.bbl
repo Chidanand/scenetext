@@ -1,0 +1,74 @@
+\begin{thebibliography}{10}\itemsep=-1pt
+
+\bibitem{113}
+A.~Bosch, A.~Zisserman, and X.~Munoz.
+\newblock Image classification using random forests and ferns.
+\newblock In {\em IEEE International Conference on Computer Vision}, 2007.
+
+\bibitem{115}
+N.~Dalal and B.~Triggs.
+\newblock Histograms of oriented gradients for human detection.
+\newblock In {\em Proceedings of IEEE Conference on Computer Vision and Pattern
+  Recognition}, pages 886--893, 2005.
+
+\bibitem{117}
+T.~E. deCampos, B.~R. Babu, and M.~Varma.
+\newblock Character recognition in natural images.
+\newblock In {\em Proceedings of the International Conference on Computer
+  Vision Theory and Applications}, Lisbon, Portugal, February 2009.
+
+\bibitem{116}
+P.~F. Felzenszwalb, R.~B. Girshick, and D.~McAllester.
+\newblock Discriminatively trained deformable part models, release 4.
+\newblock http://people.cs.uchicago.edu/~pff/latent-release4/.
+
+\bibitem{111}
+A.~Mishra, K.~Alahari, and C.~V. Jawahar.
+\newblock Top-down and bottom-up cues for scene text recognition.
+\newblock In {\em Proceedings of IEEE Conference on Computer Vision and Pattern
+  Recognition}, 2012.
+
+\bibitem{121}
+Y.~Netzer, T.~Wang, A.~Coates, A.~Bissacco, B.~Wu, and A.~Y. Ng.
+\newblock Reading digits in natural images with unsupervised feature learning.
+\newblock In {\em NIPS Workshop on Deep Learning and Unsupervised Feature
+  Learning 2011}, 2011.
+
+\bibitem{120}
+L.~Neumann and J.~Matas.
+\newblock A method for text localization and recognition in real-world images.
+\newblock In {\em ACCV 2010: Proceedings of the 10th Asian Conference on
+  Computer Vision}, 2010.
+
+\bibitem{119}
+L.~Neumann and J.~Matas.
+\newblock Real-time scene text localization and recognition.
+\newblock In {\em Proceedings of IEEE Conference on Computer Vision and Pattern
+  Recognition}, 2012.
+
+\bibitem{112}
+M.~Ozuysal, P.~Fua, and V.~Lepetit.
+\newblock Fast keypoint recognition in ten lines of code.
+\newblock In {\em Proceedings of IEEE Conference on Computer Vision and Pattern
+  Recognition}, 2007.
+
+\bibitem{114}
+J.~Shotton, M.~Johnson, and R.~Cipolla.
+\newblock Semantic texton forests for image categorization and segmentation.
+\newblock In {\em Proceedings of IEEE Conference on Computer Vision and Pattern
+  Recognition}, 2008.
+
+\bibitem{118}
+D.~L. Smith, J.~Feild, and E.~Learned-Miller.
+\newblock Enforcing similarity constraints with integer programming for better
+  scene text recognition.
+\newblock In {\em Proceedings of IEEE Conference on Computer Vision and Pattern
+  Recognition}, 2011.
+
+\bibitem{417}
+K.~Wang, B.~Babenko, and S.~Belongie.
+\newblock End-to-end scene text recognition.
+\newblock In {\em IEEE International Conference on Computer Vision (ICCV)},
+  Barcelona, Spain, 2011.
+
+\end{thebibliography}
