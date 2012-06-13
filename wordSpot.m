@@ -70,50 +70,64 @@ bbs=bbNms(bbs,nmsPrms);
 
 
 [~,idx] = sort(bbs(:,5),'descend');
-% bbs = bbs(idx(1:20),:);
+bbs = bbs(idx(1:30),:);
 % imshow(I);charDetDraw(bbs(idx(1:15),:),ch);
 
-tstDir = fullfile(dPath,'svt\test');
-objs=bbGt('bbLoad',fullfile(tstDir,sprintf('%s/I%05i.jpg.txt','wordLexPad',ff)));
+% tstDir = fullfile(dPath,'svt\test');
+% objs=bbGt('bbLoad',fullfile(tstDir,sprintf('%s/I%05i.jpg.txt','wordLexPad',ff)));
 % lexi=upper([objs.lbl]); 
+cost = zeros(1,length(lexS));
+v = zeros(size(bbs,1),length(lexS));
+cvx_quiet(true);
+[A C] = construct_collision(I,bbs);
 
-buildbigram(objs)
-load bigram_prob2;
-bbs = bbs(idx(1:15),:);
+for i=1:length(lexS)
+    bigram_prob = buildbigram(lexS{i});
+%     bbs = bbs(idx(1:15),:);
 
+%     [A C] = construct_collision(I,bbs,bigram_prob);
+    B = construct_B(bbs,bigram_prob);
+    param = [1 1 0.2];
+    W = param(1)*A - param(2)*B + param(3)*C;
+    s = bbs(:,5);
+    [v(:,i) cost(i)] = convex_magic(2*W,s);
+end
+[val idxx] = min(cost);
+figure;imshow(I);charDetDraw(bbs(v(:,idxx)==1,:),ch);
+lexS{idxx}
 %%
 % A = construct_collision(I,bbs,bigram_prob);
-s = bbs(:,5);
 
-a1 = 1:0.3:2;
-a2 = 0.1:0.3:2;
-min_cost = inf;
-idx = zeros(2,1);
-best_v = [];
-[A,B,C] = construct_collision(I,bbs,bigram_prob);
-for i=1:length(a1)
-    for j=1:length(a2)
-        param = [a1(i) a2(j) 0.4];
-        
-        W = param(1)*A - param(2)*B + param(3)*C;
-        [v final_cost] = convex_magic(W,s);
-        
-        cost = re_score(size(I,2),bbs,v,final_cost);
-        
-        if cost < min_cost 
-            min_cost = cost;
-            idx = [i j];
-            best_v = v;
-%             figure;imshow(I);charDetDraw(bbs(best_v==1,:),ch);
-        end
-    end
-end
+
+% a1 = 0.1
+% a2 = 0.1:0.3:2;
+% min_cost = inf;
+% idx = zeros(2,1);
+% best_v = [];
+
+% for i=1:length(a1)
+%     for j=1:length(a2)
+% %         param = [a1(i) a2(j) 0.4];
+% %         
+% %         W = param(1)*A - param(2)*B + param(3)*C;
+% %         [v final_cost] = convex_magic(W,s);
+%         
+% %         cost = re_score(size(I,2),bbs,v,final_cost);
+%         
+% %         if cost < min_cost 
+% %             min_cost = cost;
+% %             idx = [i j];
+% %             best_v = v;
+% % %             figure;imshow(I);charDetDraw(bbs(best_v==1,:),ch);
+% %         end
+%     end
+% end
 
 % figure(4);imshow(I);charDetDraw(bbs(best_v==1,:),ch);
 
 %%
-f_name=fullfile(sprintf('data/Result_I%05i.mat',ff));
-save(f_name,'bbs','best_v');
+% f_name=fullfile(sprintf('data/Result_I%05i.mat',ff));
+% save(f_name,'bbs','best_v');
 
 % bbs = bbs(best_v==1,:);
 
