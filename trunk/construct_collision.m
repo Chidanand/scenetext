@@ -1,4 +1,4 @@
-function [A,B,C] = construct_collision(I_image,bbs,bigram_prob)
+function [A C] = construct_collision(I_image,bbs)
 n = size(bbs,1);
 
 % First feature (collision)
@@ -17,11 +17,11 @@ for i=1:n
             A(i,j) = bbApply( 'area', inters )/minarea;
         end
         
-        cen1 = [bb1(1,1)+0.5*bb1(1,3) bb1(1,2)+0.5*bb1(1,4)];
-        cen2 = [bb2(1,1)+0.5*bb2(1,3) bb2(1,2)+0.5*bb2(1,4)];
-        dist = (cen1-cen2)*(cen1-cen2)';
-%         dist = norm(cen1-cen2,2);
-        D(i,j) = dist;
+%         cen1 = [bb1(1,1)+0.5*bb1(1,3) bb1(1,2)+0.5*bb1(1,4)];
+%         cen2 = [bb2(1,1)+0.5*bb2(1,3) bb2(1,2)+0.5*bb2(1,4)];
+%         dist = (cen1-cen2)*(cen1-cen2)';
+% %         dist = norm(cen1-cen2,2);
+%         D(i,j) = dist;
 
         I1 = I_image(bb1(1,2):min(bb1(1,2)+bb1(1,4),size(I_image,1)),bb1(1,1):min(bb1(1,1)+bb1(1,3),size(I_image,2)),:);
         I2 = I_image(bb2(1,2):min(bb2(1,2)+bb2(1,4),size(I_image,1)),bb2(1,1):min(bb2(1,1)+bb2(1,3),size(I_image,2)),:);
@@ -44,25 +44,25 @@ A = A / max(A(:));
 
 % Second feature (distance)
 
-D = D + D';
-D = exp(-D/mean(D(:)));
+% D = D + D';
+% D = exp(-D/mean(D(:)));
 
-% Second feature (collision)
-B = zeros(n,n);
-for i=1:n
-    for j=1:n
-        if i==j
-            continue;
-        end
-        if bbs(i,1) < bbs(j,1)
-            bb1 = bbs(i,6);
-            bb2 = bbs(j,6);
-            B(i,j) = bigram_prob(bb1,bb2);
-        end
-    end
-end
-B = B .* D;
-B = B / max(B(:));
+% % Second feature (collision)
+% B = zeros(n,n);
+% for i=1:n
+%     for j=1:n
+%         if i==j
+%             continue;
+%         end
+%         if bbs(i,1) < bbs(j,1)
+%             bb1 = bbs(i,6);
+%             bb2 = bbs(j,6);
+%             B(i,j) = bigram_prob(bb1,bb2);
+%         end
+%     end
+% end
+% B = B .* D;
+% B = B / max(B(:));
 
 % Thrid feature (color similarity)
 C = C + C';

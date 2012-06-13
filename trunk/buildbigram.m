@@ -1,12 +1,12 @@
 %load allGtStrs
-function buildbigram(lexi)
+function bigram_prob = buildbigram(lexi)
 % allGtStrs = {'DOOR','THE','SAKANA','AGENCY','GRANT','JAS','KFC',...
 %     'CVS','TRIDENT','DIEGO','GIFTS','BOOKSTORE','CHINESE','STORE','SAN','VIA','ARMY','HOTEL','SPACE',...
 %     'SUSHI','FIFTH','CLUB','INC','FITNESS','CHURCH'};
-for i=1:length(lexi)
-    allGtStrs{i} = lexi(i).lbl;
-end
-
+% for i=1:length(lexi)
+%     allGtStrs{i} = lexi(i).lbl;
+% end
+allGtStrs={lexi};
 ch='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_';
 
 n = length(ch);
@@ -40,5 +40,5 @@ for next=1:n
     end
 end
 
-save('bigram_prob2','bigram_prob');
+% save('bigram_prob2','bigram_prob');
 % fprintf('Bigram successfully saved\n');
