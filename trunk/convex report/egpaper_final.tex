@@ -26,17 +26,11 @@
 %%%%%%%%% TITLE
 \title{Scene Text Recognition in the Wild}
 
-\author{Chen-Yu Lee and Phuc Nguyen\\
-University of California, San Diego\\
+\author{Chen-Yu Lee\\
 {\tt\small chl260@ucsd.edu}
-% For a paper whose authors are all at the same institution,
-% omit the following lines up until the closing ``}''.
-% Additional authors and addresses can be added with ``\and'',
-% just like the second author.
-% To save space, use either the email address or home page, not both
-%\and
-%Second Author\\Institution2\\First line of institution2 address\\
-%{\tt\small secondauthor@i2.org}
+\and
+Phuc Xuan Nguyen\\
+{\tt\small pxn002@ucsd.edu}
 }
 
 \maketitle
@@ -105,7 +99,7 @@ We then apply Non-Maximum Suppression (NMS) for each character to address the is
 \begin{figure*}[ht]
 \begin{center}$
 \begin{array}{cc}
-\includegraphics[width=1\linewidth]{fig/p13_after}
+%\includegraphics[width=1\linewidth]{fig/p13_after}
 \end{array}$
 \end{center}
 \caption{Illustration of character detection and word recognition.}
@@ -126,7 +120,7 @@ that minimizes the following cost function
 x^{*} & = & argmin-s^{T}x+x^{T}Ax\\
 s.t &  & x_{i}(x_{i}-1)=0\forall i=1...n
 \end{eqnarray*}
-where A is a cost matrix. The construction of the Given the primal problem, the dual of this problem is derived as followed,
+where A is a cost matrix. The construction of the cost matrix is descirbed in the next section. Given the primal problem, the dual of this problem is derived as followed,
 \begin{eqnarray*}
 d^{*} & = & max-\frac{1}{2}(s+\lambda)^{T}(A+\mbox{diag}(\lambda))^{\dagger}(s+\lambda)\\
 s.t. &  & A+\mbox{diag}(\lambda)\succeq0\\
@@ -135,8 +129,8 @@ s.t. &  & A+\mbox{diag}(\lambda)\succeq0\\
 The semidefinite programming equivalent of this problem is expressed as followed,
 
 \begin{eqnarray*}
-\max t\\
-s.t &  & \left[\begin{array}{cc}
+& max & t\\
+ & s.t. & \left[\begin{array}{cc}
 A+\mbox{diag}(\lambda) & -\frac{1}{4}(s+\lambda)\\
 -\frac{1}{4}(s+\lambda) & -t
 \end{array}\right]\succeq0
@@ -152,19 +146,35 @@ z^{T} & 1
 \end{array}\right]\succeq0
 \end{eqnarray*}
 We treat this SDP problem as a relaxation of the primal problem. After obtaining the solution for the SDP, we search across the values of z as thesholds to minimize the original cost function.
-\subsection{Constructing}
-\subsection{Word Re-scoring and NMS}
+\subsection{Construction of cost matrices}
+We construct the cost matrix from three factors: collisions, bigram probability, and the color similarities. Mathematically, the cost matrix is defined as,
 
-The final step is our algorithm is to perform word level re-scoring and NMS~\cite{417} in order to capture global information for each word output by pictorial structure.
+\begin{eqnarray*}
+A=-\alpha B+\beta C+\gamma S
+\end{eqnarray*}
+
+where B, C, and S matrices represent bigram probability, collision, and color similarity, while $\alpha$, $\beta$, and $\gamma$ are the weighting factors.
+Collision was factored in the cost matrix as the intuition provides that correct bounding boxes often have little overlaps with another. Figure ? provides an example where the collision distinction helps in recognition. Mathematically, the collision matrix is constructed as 
+
+\begin{eqnarray*}
+C_{ij}=\frac{area_{i}\cap area_{j}}{area_{i}+area_{j}}
+\end{eqnarray*}
+
+We construct a bigram model from our lexicon, consisted of 427 words. We want to dampen the bigram effects if the bounding boxes are far away from another. So we multiply the bigram score with the inverse of the Euclidean distance between the bounding box. The bigram matrix is mathematically defined as
+\[
+B_{ij}=\begin{cases}
+\frac{P(l_{i}|l_{j})}{d_{ij}} & x_{i}>x_{j}\\
+0 & otherwise
+\end{cases}
+\]
+
+where $P(l_{i}|l_{j})$ is the probability that the letter $l_{j}$ is followed by $l_{i}$ and $d_{ij}$ is the Euclidean between the bounding boxes. The similarity matrix is constructed by computing the pairwise $\chi^2$ distance the color histogram of each bounding box. We use 15 bins for each color channel.
 
 %-------------------------------------------------------------------------
 \section{Experiment}
-
-This section describes detailed evaluation of our method.
-
 \subsection{Dataset}
 
-We use the Street View Text (SVT)~\cite{417} dataset in our experiments. The SVT dataset contains images taken from Google Map Street View. The words in SVT images come from local business sign and have high degree of variability in appearance and resolution. There are total $647$ cropped word images from the SVT testing set.
+We use the Street View Text (SVT)~\cite{417} dataset in our experiments. The SVT dataset contains images taken from Google Map Street View. The words in SVT images come from local business signs and have high degree of variability in appearance and resolution. There are total $647$ cropped word images from the SVT testing set.
 
 \subsection{Character Detection}
 
@@ -174,7 +184,7 @@ We then perform sliding window based character detection for multi-scale and mul
 
 \subsection{Cropped Word Recognition}
 
-We evaluate cropped word recognition on the SVT-WD dataset assuming a perfect text detector is available. Pictorial structure in~\cite{417} is used to recognize words using a lexicon of about $50$ words for each image. Figure ~\ref{figure:result1} shows the output by our system compared with the previous work in ~\cite{417}. Table ~\ref{table:compare} shows the word recognition accuracy is improved using multi-scale and multi-aspect ratio approach, and the result could be further improved by training on truncated training (TT) data total $10\%$ more.
+Using the character detection and recognition described in previous section, we evaluate our method on the cropped region of the SVT-WD data set. We empirically find that $\alpha=.4$, $\beta=.4$, and $\gamma=.2$ give the best performance. We achieve the accuracy of 52.2\% on the test set. While our result is worse than the original method, we did not rely much on the lexicon. Our algorithm only leverages from the bigram built from the provided lexicons. Even so, we train our bigram model on the whole lexicon of 427 words, not just 50 words as the original method describes. Due to the restriction on time, we are not able to fully search over our parameter and fully discover the weighting factors in the cost matrices. As another metric for our evaluation, we compute the Levenshtein's distance between the prediction and the ground truth. The average edit distance is 2.484. The average length of the words in the lexicon is 5.818.
 
 \begin{table}
 \begin{center}
@@ -203,9 +213,9 @@ We also analyze the effect of truncated training data. Random Fern classifier is
 \begin{figure}
 \begin{center}$
 \begin{array}{cc}
-\includegraphics[width=1\linewidth]{fig/p9} \\
-\includegraphics[width=1\linewidth]{fig/p11} \\
-\includegraphics[width=1\linewidth]{fig/p12} \\
+%\includegraphics[width=1\linewidth]{fig/p9} \\
+%\includegraphics[width=1\linewidth]{fig/p11} \\
+%\includegraphics[width=1\linewidth]{fig/p12} \\
 \end{array}$
 \end{center}
 \caption{Experiment results on SVT-WORD dataset.}
