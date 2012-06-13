@@ -39,22 +39,26 @@ vary_size = [0.4 0.5 0.6 0.7 0.8 0.9 1];    % steps for varying sizes
 
 % construct trie
 lex=wordDet('build',lexS);
-% % run character detector (Ferns)
-t1S=tic; 
-    % varying sizes
-%     bbs = [];
-%     for q=1:length(vary_size)
-%         r = 1/vary_size(q);
-%         I2=imResample(I,[round(size(I,1)),round(size(I,2)*r)]);
-%         bbs_q=charDet(I2,fModel,frnPrms);
-%         bbs_q(:,[1 3])=bbs_q(:,[1 3])/r;
-%         bbs = [bbs; bbs_q];
-%     end
-t1=toc(t1S);
 
+% % run character detector (Ferns)
 f_name=fullfile(sprintf('data/BB_I%05i.mat',ff));
-% save(f_name,'bbs');
-load(f_name);
+if(~exist(f_name,'file'))
+    t1S=tic; 
+    bbs = [];
+    for q=1:length(vary_size)
+        r = 1/vary_size(q);
+        I2=imResample(I,[round(size(I,1)),round(size(I,2)*r)]);
+        bbs_q=charDet(I2,fModel,frnPrms);
+        bbs_q(:,[1 3])=bbs_q(:,[1 3])/r;
+        bbs = [bbs; bbs_q];
+    end
+    t1=toc(t1S);
+    save(f_name,'bbs');
+else
+    t1S=tic; 
+    load(f_name);
+    t1=toc(t1S);
+end
 
 % prunning by aspect ratio (case sensitive)
 bbs=asp_prun(bbs,ap_mean,ap_var,ch);
@@ -67,22 +71,51 @@ bbs=bbNms(bbs,nmsPrms);
 
 [~,idx] = sort(bbs(:,5),'descend');
 % bbs = bbs(idx(1:20),:);
-imshow(I);charDetDraw(bbs(idx(1:15),:),ch);
+% imshow(I);charDetDraw(bbs(idx(1:15),:),ch);
 
+tstDir = fullfile(dPath,'svt\test');
+objs=bbGt('bbLoad',fullfile(tstDir,sprintf('%s/I%05i.jpg.txt','wordLexPad',ff)));
+% lexi=upper([objs.lbl]); 
+
+buildbigram(objs)
 load bigram_prob2;
 bbs = bbs(idx(1:15),:);
 
 %%
-A = construct_collision(I,bbs,bigram_prob);
+% A = construct_collision(I,bbs,bigram_prob);
 s = bbs(:,5);
-configs = convex_magic(.7*A,s);
-for i=1:3
-    figure(i);
-    imshow(I);charDetDraw(bbs(configs(:,i)==1,:),ch);
-end
-%%
 
-bbs = bbs(v==1,:);
+a1 = 1:0.3:2;
+a2 = 0.1:0.3:2;
+min_cost = inf;
+idx = zeros(2,1);
+best_v = [];
+[A,B,C] = construct_collision(I,bbs,bigram_prob);
+for i=1:length(a1)
+    for j=1:length(a2)
+        param = [a1(i) a2(j) 0.4];
+        
+        W = param(1)*A - param(2)*B + param(3)*C;
+        [v final_cost] = convex_magic(W,s);
+        
+        cost = re_score(size(I,2),bbs,v,final_cost);
+        
+        if cost < min_cost 
+            min_cost = cost;
+            idx = [i j];
+            best_v = v;
+%             figure;imshow(I);charDetDraw(bbs(best_v==1,:),ch);
+        end
+    end
+end
+
+% figure(4);imshow(I);charDetDraw(bbs(best_v==1,:),ch);
+
+%%
+f_name=fullfile(sprintf('data/Result_I%05i.mat',ff));
+save(f_name,'bbs','best_v');
+
+% bbs = bbs(best_v==1,:);
 
 bbs(:,5) = bbs(:,5)*500;
 
