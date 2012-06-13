@@ -1,0 +1,8 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: egpaper_final.aux
+The style file: ieee.bst
+Database file #1: egbib.bib
+I was expecting a `,' or a `}'---line 76 of file egbib.bib
+ : psurl = "<a href="
+ :                   http://www.ee.surrey.ac.uk/CVSSP/Publications/papers/deCampos-VISAPP-2009.pdf">PDF</a>",
+I'm skipping whatever remains of this entry
+(There was 1 error message)

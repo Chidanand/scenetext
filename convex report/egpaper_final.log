@@ -1,0 +1,412 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.3.8)  4 JUN 2012 03:28
+entering extended mode
+**C:/Users/John/Desktop/Project_proposal_0603/egpaper_final.tex
+(C:/Users/John/Desktop/Project_proposal_0603/egpaper_final.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:\Users\John\Desktop\Project_proposal_0603\cvpr.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count87
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+CVPR 8.5 x 11-Inch Proceedings Style `cvpr.sty'.
+\@ctmp=\skip43
+\@figindent=\skip44
+\cvprrulerbox=\box26
+\cvprrulercount=\count88
+\cvprruleroffset=\dimen103
+\cv@lineheight=\dimen104
+\cv@boxheight=\dimen105
+\cv@tmpbox=\box27
+\cv@refno=\count89
+\cv@tot=\count90
+\cv@tmpc@=\count91
+\cv@tmpc=\count92
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen106
+\Gin@req@width=\dimen107
+)
+\epsfxsize=\dimen108
+\epsfysize=\dimen109
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen110
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen111
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count93
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count94
+\leftroot@=\count95
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count96
+\DOTSCASE@=\count97
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen112
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count98
+\c@MaxMatrixCols=\count99
+\dotsspace@=\muskip10
+\c@parentequation=\count100
+\dspbrk@lvl=\count101
+\tag@help=\toks16
+\row@=\count102
+\column@=\count103
+\maxfields@=\count104
+\andhelp@=\toks17
+\eqnshift@=\dimen113
+\alignsep@=\dimen114
+\tagshift@=\dimen115
+\tagwidth@=\dimen116
+\totwidth@=\dimen117
+\lineht@=\dimen118
+\@envbody=\toks18
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(C:\Users\John\Desktop\Project_proposal_0603\egpaper_final.aux
+
+LaTeX Warning: Label `fig:sample1' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 24.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+\AtBeginShipoutBox=\box30
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count105
+\scratchdimen=\dimen119
+\scratchbox=\box31
+\nofMPsegments=\count106
+\nofMParguments=\count107
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen120
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
+\everyMPtoPDFconversion=\toks21
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
+LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 42.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+
+<fig/p2.pdf, id=1, 396.48125pt x 113.42375pt>
+File: fig/p2.pdf Graphic file (type pdf)
+ <use fig/p2.pdf>
+Package pdftex.def Info: fig/p2.pdf used on input line 59.
+(pdftex.def)             Requested size: 237.13594pt x 67.84015pt.
+
+<fig/p1.pdf, id=2, 506.89375pt x 211.79124pt>
+File: fig/p1.pdf Graphic file (type pdf)
+ <use fig/p1.pdf>
+Package pdftex.def Info: fig/p1.pdf used on input line 60.
+(pdftex.def)             Requested size: 237.13594pt x 99.07976pt.
+
+Underfull \hbox (badness 1062) in paragraph at lines 70--71
+\OT1/ptm/m/n/10 street level pho-tos us-ing un-su-per-vised fea-ture learn-ing
+ []
+
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+ <C:/Users/John/Desktop/Project_proposal_0603/fig/p2.pdf> <C:/Users/John/Deskto
+p/Project_proposal_0603/fig/p1.pdf>] <fig/p4.pdf, id=25, 493.845pt x 358.33875p
+t>
+File: fig/p4.pdf Graphic file (type pdf)
+ <use fig/p4.pdf>
+Package pdftex.def Info: fig/p4.pdf used on input line 99.
+(pdftex.def)             Requested size: 237.13594pt x 172.06625pt.
+
+<fig/roc_before.pdf, id=26, 990.70125pt x 533.995pt>
+File: fig/roc_before.pdf Graphic file (type pdf)
+ <use fig/roc_before.pdf>
+Package pdftex.def Info: fig/roc_before.pdf used on input line 121.
+(pdftex.def)             Requested size: 223.58379pt x 120.51035pt.
+
+<fig/roc_after.pdf, id=27, 406.51875pt x 226.8475pt>
+File: fig/roc_after.pdf Graphic file (type pdf)
+ <use fig/roc_after.pdf>
+Package pdftex.def Info: fig/roc_after.pdf used on input line 122.
+(pdftex.def)             Requested size: 223.58379pt x 124.76305pt.
+
+[2 <C:/Users/John/Desktop/Project_proposal_0603/fig/p4.pdf>]
+<fig/p68_before.pdf, id=39, 271.0125pt x 104.39pt>
+File: fig/p68_before.pdf Graphic file (type pdf)
+ <use fig/p68_before.pdf>
+Package pdftex.def Info: fig/p68_before.pdf used on input line 151.
+(pdftex.def)             Requested size: 223.58379pt x 86.12439pt.
+
+<fig/p68_after.pdf, id=40, 271.0125pt x 104.39pt>
+File: fig/p68_after.pdf Graphic file (type pdf)
+ <use fig/p68_after.pdf>
+Package pdftex.def Info: fig/p68_after.pdf used on input line 152.
+(pdftex.def)             Requested size: 223.58379pt x 86.12439pt.
+
+<fig/p121_before.pdf, id=41, 229.85875pt x 67.25125pt>
+File: fig/p121_before.pdf Graphic file (type pdf)
+
+<use fig/p121_before.pdf>
+Package pdftex.def Info: fig/p121_before.pdf used on input line 153.
+(pdftex.def)             Requested size: 223.58379pt x 65.41934pt.
+
+<fig/p121_after.pdf, id=42, 229.85875pt x 67.25125pt>
+File: fig/p121_after.pdf Graphic file (type pdf)
+ <use fig/p121_after.pdf>
+Package pdftex.def Info: fig/p121_after.pdf used on input line 154.
+(pdftex.def)             Requested size: 223.58379pt x 65.41934pt.
+
+<fig/p124_before.pdf, id=43, 291.0875pt x 137.51375pt>
+File: fig/p124_before.pdf Graphic file (type pdf)
+
+<use fig/p124_before.pdf>
+Package pdftex.def Info: fig/p124_before.pdf used on input line 155.
+(pdftex.def)             Requested size: 223.58379pt x 105.62572pt.
+
+<fig/p124_after.pdf, id=44, 291.0875pt x 129.48375pt>
+File: fig/p124_after.pdf Graphic file (type pdf)
+ <use fig/p124_after.pdf>
+Package pdftex.def Info: fig/p124_after.pdf used on input line 156.
+(pdftex.def)             Requested size: 223.58379pt x 99.45778pt.
+
+Underfull \hbox (badness 1648) in paragraph at lines 185--186
+[]\OT1/ptm/m/n/10 We eval-u-ate our meth-ods on the chal-leng-ing SVT
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 185--186
+\OT1/ptm/m/n/10 dataset, which con-tains words in dif-fer-ent view-points,
+ []
+
+[3 <C:/Users/John/Desktop/Project_proposal_0603/fig/roc_before.pdf> <C:/Users/J
+ohn/Desktop/Project_proposal_0603/fig/roc_after.pdf>]
+<fig/p125_before.pdf, id=57, 279.0425pt x 132.495pt>
+File: fig/p125_before.pdf Graphic file (type pdf)
+ <use fig/p125_before.pdf>
+Package pdftex.def Info: fig/p125_before.pdf used on input line 199.
+(pdftex.def)             Requested size: 223.58379pt x 106.16595pt.
+
+<fig/p125_after.pdf, id=58, 279.0425pt x 132.495pt>
+File: fig/p125_after.pdf Graphic file (type pdf)
+ <use fig/p125_after.pdf>
+Package pdftex.def Info: fig/p125_after.pdf used on input line 200.
+(pdftex.def)             Requested size: 223.58379pt x 106.16595pt.
+
+<fig/p417_before.pdf, id=59, 332.24126pt x 70.2625pt>
+File: fig/p417_before.pdf Graphic file (type pdf)
+
+<use fig/p417_before.pdf>
+Package pdftex.def Info: fig/p417_before.pdf used on input line 201.
+(pdftex.def)             Requested size: 223.58379pt x 47.2836pt.
+ <fig/p417_after.pdf, id=60, 332.24126pt x 70.2625pt>
+File: fig/p417_after.pdf Graphic file (type pdf)
+
+<use fig/p417_after.pdf>
+Package pdftex.def Info: fig/p417_after.pdf used on input line 202.
+(pdftex.def)             Requested size: 223.58379pt x 47.2836pt.
+
+<fig/p443_before.pdf, id=61, 472.76625pt x 91.34125pt>
+File: fig/p443_before.pdf Graphic file (type pdf)
+
+<use fig/p443_before.pdf>
+Package pdftex.def Info: fig/p443_before.pdf used on input line 203.
+(pdftex.def)             Requested size: 223.58379pt x 43.19798pt.
+
+<fig/p443_after.pdf, id=62, 472.76625pt x 91.34125pt>
+File: fig/p443_after.pdf Graphic file (type pdf)
+ <use fig/p443_after.pdf>
+Package pdftex.def Info: fig/p443_after.pdf used on input line 204.
+(pdftex.def)             Requested size: 223.58379pt x 43.19798pt.
+
+(C:\Users\John\Desktop\Project_proposal_0603\egpaper_final.bbl [4 <C:/Users/Joh
+n/Desktop/Project_proposal_0603/fig/p68_before.pdf> <C:/Users/John/Desktop/Proj
+ect_proposal_0603/fig/p68_after.pdf> <C:/Users/John/Desktop/Project_proposal_06
+03/fig/p121_before.pdf> <C:/Users/John/Desktop/Project_proposal_0603/fig/p121_a
+fter.pdf> <C:/Users/John/Desktop/Project_proposal_0603/fig/p124_before.pdf> <C:
+/Users/John/Desktop/Project_proposal_0603/fig/p124_after.pdf>]) [5
+
+ <C:/Users/John/Desktop/Project_proposal_0603/fig/p125_before.pdf> <C:/Users/Jo
+hn/Desktop/Project_proposal_0603/fig/p125_after.pdf> <C:/Users/John/Desktop/Pro
+ject_proposal_0603/fig/p417_before.pdf> <C:/Users/John/Desktop/Project_proposal
+_0603/fig/p417_after.pdf> <C:/Users/John/Desktop/Project_proposal_0603/fig/p443
+_before.pdf> <C:/Users/John/Desktop/Project_proposal_0603/fig/p443_after.pdf>]
+(C:\Users\John\Desktop\Project_proposal_0603\egpaper_final.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2970 strings out of 494045
+ 38122 string characters out of 3145973
+ 105105 words of memory out of 3000000
+ 6194 multiletter control sequences out of 15000+200000
+ 26447 words of font info for 67 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 37i,12n,39p,1129b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/ti
+mes/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on egpaper_final.pdf (5 pages, 539527 bytes).
+PDF statistics:
+ 179 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+
