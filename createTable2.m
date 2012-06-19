@@ -33,7 +33,6 @@ for p=1:length(paramSets)
     fModel.oBin = 8;
     fModel.chH = 48;
     fModel.ferns = SVM_model;
-
     
   % loop over test sets
   for i=1:length(tstSets)
@@ -48,7 +47,7 @@ for p=1:length(paramSets)
     fclose(fid);
     
     % loop over images
-    for f=16:length(dir(fullfile(tstDir,labNm,'*.txt')))-1
+    for f=2:length(dir(fullfile(tstDir,labNm,'*.txt')))-1
       fid1=fopen(dbgFileNm,'a'); fprintf(fid1,'%i,',f); fclose(fid1);
       objs=bbGt('bbLoad',fullfile(tstDir,sprintf('%s/I%05i.jpg.txt',labNm,f)));
       gt=upper([objs.lbl]); if(~checkValidGt(gt)), continue; end
@@ -57,7 +56,7 @@ for p=1:length(paramSets)
 %       I = imcrop(I,[12 6 18 18]);
 %       imshow(I);
       
-      if(~strcmp(tstSet,'svt'))
+      if(~strcmp(tstSet(1),'svt'))
         if(isinf(kVal)),
           lexS=allGtStrs;
         else
