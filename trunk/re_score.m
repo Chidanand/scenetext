@@ -17,7 +17,7 @@ if n>1  % at least two characters
         cent_dis(i) = (cen1-cen2)'*(cen1-cen2) / (wid^2);
 %     cent_dis(i) = (cen1-cen2)'*(cen1-cen2);
     end
-cost = 10*var(cent_dis) + final_cost;
+cost = var(cent_dis);
 else
     cost = 1e5;
 end
