@@ -1,0 +1,6 @@
+Shrink by 0.7 width; 
+TEST DIR:C:\Users\Phuc\Documents\Research\alpha\data\svt\test
+KVAL:Inf
+(total examples):0
+(string match results):
+top1:NaN
