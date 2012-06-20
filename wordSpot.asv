@@ -60,82 +60,32 @@ else
     t1=toc(t1S);
 end
 
-% prunning by aspect ratio (case sensitive)
 bbs=asp_prun(bbs,ap_mean,ap_var,ch);
-% upper and lower case are equivalent
 bbs(:,6)=equivClass(bbs(:,6),ch);
-% character NMS
 nmsPrms{8} = {1,1};
 bbs=bbNms(bbs,nmsPrms);
 
-
 [~,idx] = sort(bbs(:,5),'descend');
 bbs = bbs(idx(1:15),:);
-% imshow(I);charDetDraw(bbs(idx(1:15),:),ch);
-
-% tstDir = fullfile(dPath,'svt\test');
-% objs=bbGt('bbLoad',fullfile(tstDir,sprintf('%s/I%05i.jpg.txt','wordLexPad',ff)));
-% lexi=upper([objs.lbl]); 
+save()
 cost = zeros(1,length(lexS));
 v = zeros(size(bbs,1),length(lexS));
 cvx_quiet(true);
-[A C] = construct_collision(I,bbs);
+load('data/template/template_01'); % load template mask
+[A C] = construct_collision(I,bbs,template_01);
 
-for i=1:length(lexS)
-
-    bigram_prob = buildbigram(lexS{i});
-%     bbs = bbs(idx(1:15),:);
-
-%     [A C] = construct_collision(I,bbs,bigram_prob);
-    B = construct_B(bbs,bigram_prob);
-    param = [0.5 1 0.5];
-    W = param(1)*A - param(2)*B + param(3)*C;
+lexicons = regexp(lexS{1},',','split');
+for i=1:length(lexicons)
+%     bigram_prob = buildbigram(lexicons{i})/length(lexicons{i});
+%     B = construct_B(bbs,bigram_prob);
+    param = [.5 1.2 .5];
+%     W = param(1)*A - param(2)*B + param(3)*C;
+    W = C;
     s = bbs(:,5);
     [v(:,i) cost(i)] = convex_magic(W,s);
 end
+[val idxx] = min(cost);
+figure;imshow(I);charDetDraw(bbs(v(:,idxx)==1,:),ch);
+lexicons{idxx}
 
-%%
-% A = construct_collision(I,bbs,bigram_prob);
-
-
-% a1 = 0.1
-% a2 = 0.1:0.3:2;
-% min_cost = inf;
-% idx = zeros(2,1);
-% best_v = [];
-
-% for i=1:length(a1)
-%     for j=1:length(a2)
-% %         param = [a1(i) a2(j) 0.4];
-% %         
-% %         W = param(1)*A - param(2)*B + param(3)*C;
-% %         [v final_cost] = convex_magic(W,s);
-%         
-% %         cost = re_score(size(I,2),bbs,v,final_cost);
-%         
-% %         if cost < min_cost 
-% %             min_cost = cost;
-% %             idx = [i j];
-% %             best_v = v;
-% % %             figure;imshow(I);charDetDraw(bbs(best_v==1,:),ch);
-% %         end
-%     end
-% end
-
-% figure(4);imshow(I);charDetDraw(bbs(best_v==1,:),ch);
-
-%%
-% f_name=fullfile(sprintf('data/Result_I%05i.mat',ff));
-% save(f_name,'bbs','best_v');
-
-% bbs = bbs(best_v==1,:);
-
-bbs(:,5) = bbs(:,5)*500;
-
-% run word detector (PLEX)
 t2S=tic; words=wordDet('plexApply',bbs,ch1,lex,plxPrms); t2=toc(t2S);
-if ~isempty(wordSvm)
-  % if available, score using SVM
-  words=wordNms(words,wordSvm);
-end
-
