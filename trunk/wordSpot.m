@@ -67,17 +67,20 @@ bbs=bbNms(bbs,nmsPrms);
 
 [~,idx] = sort(bbs(:,5),'descend');
 bbs = bbs(idx(1:15),:);
+save()
 cost = zeros(1,length(lexS));
 v = zeros(size(bbs,1),length(lexS));
 cvx_quiet(true);
-[A C] = construct_collision(I,bbs);
+load('data/template/template_01'); % load template mask
+[A C] = construct_collision(I,bbs,template_01);
 
 lexicons = regexp(lexS{1},',','split');
 for i=1:length(lexicons)
-    bigram_prob = buildbigram(lexicons{i})/length(lexicons{i});
-    B = construct_B(bbs,bigram_prob);
+%     bigram_prob = buildbigram(lexicons{i})/length(lexicons{i});
+%     B = construct_B(bbs,bigram_prob);
     param = [.5 1.2 .5];
-    W = param(1)*A - param(2)*B + param(3)*C;
+%     W = param(1)*A - param(2)*B + param(3)*C;
+    W = C;
     s = bbs(:,5);
     [v(:,i) cost(i)] = convex_magic(W,s);
 end
