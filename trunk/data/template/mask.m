@@ -7,13 +7,14 @@ template_01 = zeros(10000,36);
 % load('template_01')
 for i=1:36
 %     subplot(6,6,i),imshow(reshape(template(:,i),100,100));
-%     idx = template(:,i) > 0.2;
-%     out = zeros(10000,1);
-%     out(idx) = 1;
-%     out = reshape(out,100,100);
-    out = template(:,i);
+    idx = template(:,i) > 0.05;
+    out = zeros(10000,1);
+    out(idx) = 1;
     out = reshape(out,100,100);
-    out = out(:,16:end-15);
+
+%     out = template(:,i);
+%     out = reshape(out,100,100);
+    out = out(:,13:end-12);
     out = imresize(out,[100 100]);
     template_01(:,i) = out(:);
     subplot(6,6,i),imshow(reshape(template_01(:,i),100,100));

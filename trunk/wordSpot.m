@@ -78,10 +78,12 @@ lexicons = regexp(lexS{1},',','split');
 for i=1:length(lexicons)
 %     bigram_prob = buildbigram(lexicons{i})/length(lexicons{i});
 %     B = construct_B(bbs,bigram_prob);
-    param = [.5 1.2 .5];
+    param = [1 0 0.5];
 %     W = param(1)*A - param(2)*B + param(3)*C;
-    W = C;
-    s = bbs(:,5);
+    W = param(1)*A + param(3)*C;
+%     W = C;
+    s = ones(size(bbs,1),1);
+%     s = bbs(:,5);
     [v(:,i) cost(i)] = convex_magic(W,s);
 end
 [val idxx] = min(cost);
