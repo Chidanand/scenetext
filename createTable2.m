@@ -47,11 +47,14 @@ for p=1:length(paramSets)
     fclose(fid);
     
     % loop over images
-    for f=2:length(dir(fullfile(tstDir,labNm,'*.txt')))-1
+    for f=89:length(dir(fullfile(tstDir,labNm,'*.txt')))-1
       fid1=fopen(dbgFileNm,'a'); fprintf(fid1,'%i,',f); fclose(fid1);
       objs=bbGt('bbLoad',fullfile(tstDir,sprintf('%s/I%05i.jpg.txt',labNm,f)));
       gt=upper([objs.lbl]); if(~checkValidGt(gt)), continue; end
       I=imread(fullfile(tstDir,sprintf('%s/I%05i.jpg',datNm,f)));
+%       M1 = mser_compute(I);
+%       M1 = repmat(M1,[1 1 3]);
+%       I = I.*uint8(M1==1);
       
 %       I = imcrop(I,[12 6 18 18]);
 %       imshow(I);
